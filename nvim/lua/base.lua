@@ -1,4 +1,5 @@
 -- editor settings {
+vim.o.termguicolors = true
 
 vim.o.number = true
 vim.o.relativenumber = true
@@ -6,28 +7,27 @@ vim.o.encoding = 'utf-8'
 vim.o.compatible = false
 vim.o.hidden = true
 vim.o.wrap = false
-
 -- }
 
 -- searching {
-
 vim.o.incsearch = true
 vim.o.hlsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
 -- }
 
 -- status bar {
-
 vim.o.ruler = true
 vim.o.showcmd = true
 vim.o.wildmenu = true
+-- }
 
+-- mouse support {
+vim.o.mouse = 'a'
+vim.o.mousemodel = 'popup'
 -- }
 
 -- folding and indentation {
-
 vim.o.foldenable = true
 vim.o.foldlevel = 100
 vim.o.foldmethod = 'indent'
@@ -66,17 +66,8 @@ function! CppNoNamespaceAndTemplateIndent()
     endif
     return l:retv
 endfunction
-
 if has("autocmd")
     autocmd BufEnter *.{cc,cxx,cpp,h,hh,hpp,hxx} setlocal indentexpr=CppNoNamespaceAndTemplateIndent()
 endif
 ]])
-
--- }
-
--- mouse support {
-
-vim.o.mouse = 'a'
-vim.o.mousemodel = 'popup'
-
 -- }
