@@ -1,5 +1,7 @@
 -- editor settings {
 vim.o.termguicolors = true
+vim.g.moonflyItalics = 0
+vim.cmd('colorscheme moonfly')
 
 vim.o.number = true
 vim.o.relativenumber = true
