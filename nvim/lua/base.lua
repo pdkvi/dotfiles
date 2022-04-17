@@ -9,6 +9,9 @@ vim.o.encoding = 'utf-8'
 vim.o.compatible = false
 vim.o.hidden = true
 vim.o.wrap = false
+
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 -- }
 
 -- searching {
