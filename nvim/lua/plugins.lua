@@ -34,6 +34,10 @@ return require('packer').startup({
 	}
 	-- }
 
+	-- git {
+	use 'lewis6991/gitsigns.nvim'
+	-- }
+
 	-- completion {
 	use {
 		'hrsh7th/nvim-cmp',
