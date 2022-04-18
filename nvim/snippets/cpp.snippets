@@ -1,0 +1,36 @@
+snippet header .hpp files include guard
+	#ifndef $1
+	#define $1
+	#pragma once
+	
+	$0
+	
+	#endif // $1
+
+snippet namespace C++ namespace
+	namespace $1
+	{
+	
+	$0
+	
+	} // namespace $1
+
+snippet class C++ class
+	class $1
+	{
+	public:
+		$1() = default;
+		~$1() = default;
+
+	public:
+		$1($1 const&) = default;
+		$1($1&&) = default;
+
+	public:
+		$1& operator=($1 const&) = default;
+		$1& operator=($1&&) = default;
+
+	public:
+
+	private:
+	};
