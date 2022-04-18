@@ -51,6 +51,10 @@ return require('packer').startup({
 	}
 	-- }
 
+	-- buffers {
+	use 'qpkorr/vim-bufkill'
+	-- }
+
 	-- comment {
 	use 'terrortylor/nvim-comment'
 	-- }

@@ -5,12 +5,16 @@ end
 
 local opts = { noremap = true, silent = true }
 
+vim.g.BufKillCreateMappings = 0
+
 map("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
 
 map("n", "gt", ":BufferLineCycleNext<CR>", opts)
 map("n", "gT", ":BufferLineCyclePrev<CR>", opts)
 map("n", "]t", ":tabnext<CR>", opts)
 map("n", "[t", ":tabprev<CR>", opts)
+
+map("n", "<C-q>", ":BD<CR>", opts)
 
 map("n", "<Leader>ff", ":Telescope find_files<CR>", opts)
 map("n", "<Leader>fg", ":Telescope live_grep<CR>", opts)
