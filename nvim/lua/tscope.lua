@@ -1,0 +1,4 @@
+require('telescope').setup({
+	extensions = {
+	}
+})

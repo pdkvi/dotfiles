@@ -12,6 +12,13 @@ return require('packer').startup(function(use)
 	}
 	-- }
 
+	-- telescope {
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { 'nvim-lua/plenary.nvim' }
+	}
+	-- }
+
 	-- status bar {
 	use {
 		'nvim-lualine/lualine.nvim',
