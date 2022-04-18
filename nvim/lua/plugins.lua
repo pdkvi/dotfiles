@@ -19,6 +19,13 @@ return require('packer').startup(function(use)
 	}
 	-- }
 
+	-- top bar {
+	use {
+		'akinsho/bufferline.nvim', tag = '*',
+		requires = { 'kyazdani42/nvim-web-devicons' }
+	}
+	-- }
+
 	-- completion {
 	use {
 		'hrsh7th/nvim-cmp',

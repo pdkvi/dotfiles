@@ -3,4 +3,11 @@ function map(mode, key, expr, opts)
 	vim.api.nvim_set_keymap(mode, key, expr, opts)
 end
 
-map("n", "<Leader>e", ":NvimTreeToggle<CR>")
+local opts = { noremap = true, silent = true }
+
+map("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
+
+map("n", "gt", ":BufferLineCycleNext<CR>", opts)
+map("n", "gT", ":BufferLineCyclePrev<CR>", opts)
+map("n", "]t", ":tabnext<CR>", opts)
+map("n", "[t", ":tabprev<CR>", opts)

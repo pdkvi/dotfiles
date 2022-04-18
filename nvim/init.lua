@@ -4,6 +4,7 @@ require('hotkeys')
 
 require('ts')
 require('statusbar')
+require('topbar')
 require('completion')
 require('filetree')
 require('terminal')
