@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
 	-- status bar {
 	use {
 		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+		requires = { 'kyazdani42/nvim-web-devicons' }
 	}
 	-- }
 
@@ -23,10 +23,17 @@ return require('packer').startup(function(use)
 	use {
 		'hrsh7th/nvim-cmp',
 		requires = {
-			'hrsh7th/cmp-nvim-lsp', opt = true,
-			'neovim/nvim-lspconfig', opt = true,
-			'L3MON4D3/LuaSnip', opt = true
+			'hrsh7th/cmp-nvim-lsp',
+			'neovim/nvim-lspconfig',
+			'L3MON4D3/LuaSnip'
 		}
+	}
+	-- }
+
+	-- file tree {
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = { 'kyazdani42/nvim-web-devicons' }
 	}
 	-- }
 end)
