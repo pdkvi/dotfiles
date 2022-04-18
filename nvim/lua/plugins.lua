@@ -1,4 +1,5 @@
-return require('packer').startup(function(use)
+return require('packer').startup({
+	function(use)
 	-- packer updates {
 	use 'wbthomason/packer.nvim'
 	-- }
@@ -54,4 +55,16 @@ return require('packer').startup(function(use)
 	-- terminal {
 	use 'akinsho/toggleterm.nvim'
 	-- }
-end)
+end,
+
+config = {
+	display = {
+		working_sym = '↻', -- The symbol for a plugin being installed/updated
+		error_sym = '✗', -- The symbol for a plugin with an error in installation/updating
+		done_sym = '✓', -- The symbol for a plugin which has completed installation/updating
+		removed_sym = '-', -- The symbol for an unused plugin which was removed
+		moved_sym = '→', -- The symbol for a plugin which was moved (e.g. from opt to start)
+		header_sym = '━', -- The symbol for the header line in packer's display
+	}
+}
+})
