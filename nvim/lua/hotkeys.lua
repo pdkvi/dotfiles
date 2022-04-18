@@ -22,3 +22,8 @@ map("n", "<Leader>fb", ":Telescope buffers<CR>", opts)
 map("n", "<Leader>fh", ":Telescope help_tags<CR>", opts)
 
 map("n", "<C-]>", ":lua vim.lsp.buf.definition()<CR>", opts)
+
+map("n", "<F2>", ":CMake select_target<CR>", opts)
+map("n", "<F3>", ":CMake configure<CR>", opts)
+map("n", "<F7>", ":CMake build<CR>", opts)
+map("n", "<F8>", ":CMake build_and_run<CR>", opts)

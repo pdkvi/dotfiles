@@ -23,7 +23,10 @@ return require('packer').startup({
 	-- telescope {
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = { 'nvim-lua/plenary.nvim' }
+		requires = {
+			'nvim-telescope/telescope-ui-select.nvim',
+			'nvim-lua/plenary.nvim'
+		}
 	}
 	-- }
 
@@ -43,6 +46,16 @@ return require('packer').startup({
 
 	-- git {
 	use 'lewis6991/gitsigns.nvim'
+	-- }
+
+	-- cmake {
+	use {
+		'Shatur/neovim-cmake',
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'mfussenegger/nvim-dap'
+		}
+	}
 	-- }
 
 	-- completion {
