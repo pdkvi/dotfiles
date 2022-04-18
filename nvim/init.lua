@@ -1,5 +1,6 @@
 require('base')
 require('plugins')
+require('hotkeys')
 
 require('ts')
 require('statusbar')
