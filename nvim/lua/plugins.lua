@@ -45,6 +45,10 @@ return require('packer').startup({
 	}
 	-- }
 
+	-- comment {
+	use 'terrortylor/nvim-comment'
+	-- }
+
 	-- file tree {
 	use {
 		'kyazdani42/nvim-tree.lua',

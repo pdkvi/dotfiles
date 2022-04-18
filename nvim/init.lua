@@ -1,7 +1,7 @@
 require('base')
 require('plugins')
 require('hotkeys')
-
+require('comment')
 require('ts')
 require('statusbar')
 require('topbar')
