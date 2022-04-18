@@ -1,9 +1,14 @@
 require('nvim-tree').setup({
 	diagnostics = {
 		enable = true,
+		open_on_setup = true,
+		disable_netrw = true,
 		show_on_dirs = true,
 		icons = { hint = "H", info = "I", warning = "W", error = "E" }
 	},
+	actions = {
+		open_file = { resize_window = true }
+	}
 })
 
 -- TODO: change to lua variable
