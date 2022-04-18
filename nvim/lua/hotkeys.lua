@@ -27,3 +27,8 @@ map("n", "<F2>", ":CMake select_target<CR>", opts)
 map("n", "<F3>", ":CMake configure<CR>", opts)
 map("n", "<F7>", ":CMake build<CR>", opts)
 map("n", "<F8>", ":CMake build_and_run<CR>", opts)
+
+
+vim.cmd([[autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><Leader>t <Cmd>exe v:count1 . "ToggleTerm"<CR>]])
+map("n", "<Leader>t", ":ToggleTerm<CR>", opts)

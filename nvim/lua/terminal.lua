@@ -1,8 +1,7 @@
 require('toggleterm').setup({
-	open_mapping = '<Leader>t',
 	direction = 'float',
 	float_opts = {
-		width = 80,
-		height = 24
+		width = 100,
+		height = 30
 	}
 })
