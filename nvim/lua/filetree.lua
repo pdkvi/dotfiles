@@ -22,3 +22,8 @@ let g:nvim_tree_icons =
 	\ }
 \ }
 ]])
+
+vim.cmd([[
+autocmd BufEnter * ++nested if winnr('$') == 1 &&
+	\ bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+]])
