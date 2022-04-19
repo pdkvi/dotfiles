@@ -68,6 +68,7 @@ return require('packer').startup({
 		requires = {
 			'hrsh7th/cmp-nvim-lsp',
 			'neovim/nvim-lspconfig',
+			'hrsh7th/cmp-nvim-lsp-signature-help',
 			'onsails/lspkind.nvim',
 			'L3MON4D3/LuaSnip',
 			'saadparwaiz1/cmp_luasnip',
