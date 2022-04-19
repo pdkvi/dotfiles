@@ -7,6 +7,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.cmd('autocmd InsertEnter * set number norelativenumber')
 vim.cmd('autocmd InsertLeave * set number relativenumber')
+vim.o.colorcolumn = '100'
 vim.o.encoding = 'utf-8'
 vim.o.compatible = false
 vim.o.hidden = true

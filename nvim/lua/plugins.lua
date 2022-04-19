@@ -13,6 +13,10 @@ return require('packer').startup({
 	}
 	-- }
 
+	-- ruler {
+	use 'lukas-reineke/virt-column.nvim'
+	-- }
+
 	-- startup screen {
 	use {
 		'goolord/alpha-nvim',

@@ -1,5 +1,6 @@
 require('base')
 require('plugins')
+require('ruler')
 require('splash')
 require('hotkeys')
 require('comment')
