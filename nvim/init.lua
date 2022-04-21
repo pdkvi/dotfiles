@@ -1,4 +1,5 @@
 require('base')
+require('colors')
 require('plugins')
 require('ruler')
 require('splash')
