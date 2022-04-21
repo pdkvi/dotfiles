@@ -75,6 +75,8 @@ return require('packer').startup({
 			'hrsh7th/cmp-path'
 		}
 	}
+
+	use 'windwp/nvim-autopairs'
 	-- }
 
 	-- buffers {

@@ -2,6 +2,8 @@ local cmp = require('cmp')
 local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 
+require('nvim-autopairs').setup({})
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
