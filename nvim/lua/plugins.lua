@@ -79,6 +79,13 @@ return require('packer').startup({
 	use 'windwp/nvim-autopairs'
 	-- }
 
+	-- diagnostics {
+	use {
+		'folke/trouble.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons' }
+	}
+	-- }
+
 	-- buffers {
 	use 'qpkorr/vim-bufkill'
 	-- }
