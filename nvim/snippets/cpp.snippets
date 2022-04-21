@@ -23,12 +23,12 @@ snippet class C++ class
 		~$1() = default;
 
 	public:
-		$1($1 const&) = default;
-		$1($1&&) = default;
+		$1($1 const& rhs) = default;
+		$1($1&& rhs) = default;
 
 	public:
-		$1& operator=($1 const&) = default;
-		$1& operator=($1&&) = default;
+		$1& operator=($1 const& rhs) = default;
+		$1& operator=($1&& rhs) = default;
 
 	public:
 
