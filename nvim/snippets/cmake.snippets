@@ -1,0 +1,27 @@
+snippet baseinit Base sceleton of CMake project
+	cmake_minimum_required(VERSION ${1:3.0.0})
+	project(${2:untitled})
+
+	add_executable(\${PROJECT_NAME} main.cpp)
+
+snippet init Advanced sceleton of CMake project
+	cmake_minimum_required(VERSION ${1:3.0.0})
+	project(${2:untitled})
+
+	set(SOURCES_DIR_BASENAME "src")
+	set(SOURCES_DIR "\${CMAKE_SOURCE_DIR}/\${SOURCES_DIR_BASENAME}")
+
+	set(HEADERS_DIR_BASENAME "include")
+	set(HEADERS_DIR "\${CMAKE_SOURCE_DIR}/\${HEADERS_DIR_BASENAME}")
+
+	file(GLOB_RECURSE SOURCES
+		\${SOURCES_DIR}/*.cpp
+		\${SOURCES_DIR}/*.c
+	)
+	file(GLOB_RECURSE HEADERS
+		\${SOURCES_DIR}/*.hpp
+		\${SOURCES_DIR}/*.h
+	)
+
+	add_executable(\${PROJECT_NAME} \${SOURCES})
+	target_include_directories(\${PROJECT_NAME} PUBLIC \${HEADERS_DIR})
