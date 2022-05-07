@@ -17,13 +17,6 @@ return require('packer').startup({
 	use 'lukas-reineke/virt-column.nvim'
 	-- }
 
-	-- startup screen {
-	use {
-		'goolord/alpha-nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' }
-	}
-	-- }
-
 	-- telescope {
 	use {
 		'nvim-telescope/telescope.nvim',
