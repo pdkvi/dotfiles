@@ -9,7 +9,7 @@ vim.g.BufKillCreateMappings = 0
 
 map("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
 
-map("n", "<F1>", ":ClangdSwitchSourceHeader<CR>", opts)
+map("n", "<F4>", ":ClangdSwitchSourceHeader<CR>", opts)
 map("n", "gt", ":BufferLineCycleNext<CR>", opts)
 map("n", "gT", ":BufferLineCyclePrev<CR>", opts)
 map("n", "]t", ":tabnext<CR>", opts)
