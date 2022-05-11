@@ -6,6 +6,8 @@ return require('packer').startup({
 
 	-- colorschemes {
 	use 'bluz71/vim-moonfly-colors'
+	use 'fcpg/vim-fahrenheit'
+	use 'fcpg/vim-orbital'
 
 	use {
 		'nvim-treesitter/nvim-treesitter',
