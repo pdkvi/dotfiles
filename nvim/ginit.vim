@@ -13,3 +13,20 @@ if exists('g:GuiLoaded')
 	inoremap <S-Insert> <ESC>"+gpa
 	vnoremap <S-Insert> "+gp
 endif
+
+if exists('g:fvim_loaded')
+	FVimCustomTitleBar v:true
+	FVimUIPopupMenu v:false
+	FVimUIWildMenu v:false
+
+	FVimFontNormalWeight 500
+	FVimFontBoldWeight 800
+	set guifont=SF\ Mono:h14
+
+	vnoremap <C-c> "+y
+	inoremap <C-v> <ESC>"+pa
+
+	nnoremap <S-Insert> "+gp
+	inoremap <S-Insert> <ESC>"+gpa
+	vnoremap <S-Insert> "+gp
+endif
