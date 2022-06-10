@@ -4,6 +4,10 @@ return require('packer').startup({
 	use 'wbthomason/packer.nvim'
 	-- }
 
+	-- startup {
+	use 'lewis6991/impatient.nvim'
+	-- }
+
 	-- colorschemes {
 	use 'bluz71/vim-moonfly-colors'
 	use 'fcpg/vim-fahrenheit'

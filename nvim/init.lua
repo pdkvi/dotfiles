@@ -1,3 +1,5 @@
+require('impatient')
+
 require('base')
 require('colors')
 require('plugins')
