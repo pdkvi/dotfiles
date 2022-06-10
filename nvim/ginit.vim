@@ -10,6 +10,6 @@ if exists('g:GuiLoaded')
 	snoremap <silent><RightMouse> <C-G>:call GuiShowContextMenu()<CR>gv
 
 	nnoremap <S-Insert> "+gp
-	inoremap <S-Insert> <ESC>"+gpi
+	inoremap <S-Insert> <ESC>"+gpa
 	vnoremap <S-Insert> "+gp
 endif
