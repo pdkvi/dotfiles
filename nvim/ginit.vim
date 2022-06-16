@@ -21,7 +21,7 @@ if exists('g:fvim_loaded')
 
 	FVimFontNormalWeight 500
 	FVimFontBoldWeight 800
-	set guifont=SF\ Mono:h14
+	set guifont=Consolas\ NF:h14
 
 	vnoremap <C-c> "+y
 	inoremap <C-v> <ESC>"+pa
