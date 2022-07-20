@@ -1,3 +1,5 @@
+vim.o.runtimepath = vim.fn.stdpath('data') .. '/site/pack/*/start/*,' .. vim.o.runtimepath
+
 return require('packer').startup({
 	function(use)
 	-- packer updates {
