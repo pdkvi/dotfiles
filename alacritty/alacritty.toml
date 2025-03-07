@@ -1,0 +1,17 @@
+[window.dimensions]
+columns = 90
+lines = 24
+
+[font]
+normal = { family = "JetBrains Mono Nerd Font" }
+size = 11.5
+
+[keyboard]
+bindings = [
+    { key = "Space", mods = "Control | Shift",  action = "ReceiveChar" },
+    { key = "m" ,    mods = "Control",          chars = "\uF7FF" },
+    { key = "i" ,    mods = "Control",          chars = "\uF7FE" }
+]
+
+[general]
+import = [ "~/.config/alacritty/themes/campbell.toml" ]
