@@ -119,6 +119,7 @@ return
                 {
                     "clangd",
                     "--header-insertion=never",
+                    "--clang-tidy",
                     "-j=4",
                     "--malloc-trim",
                     "--background-index",
