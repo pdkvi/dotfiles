@@ -27,7 +27,6 @@ return
         vim.keymap.set("i", "<C-k>", "")
 
         vim.keymap.set("n", "<A-CR>", vim.lsp.buf.code_action)
-        vim.keymap.set({"i", "n"}, "<F2>", vim.lsp.buf.rename)
 
         -- <C-i> = \u{f7fe}
         vim.keymap.set("n", "<S-i>", vim.lsp.buf.hover)
@@ -71,6 +70,8 @@ return
             lineFoldingOnly = true
         }
 
+        ---@param client vim.lsp.Client
+        ---@param bufnr integer
         local common_on_attach = function(client, bufnr)
             if client.server_capabilities.definitionProvider then
                 vim.opt.tagfunc = "v:lua.preview_tagfunc"
@@ -92,6 +93,8 @@ return
                     vim.wo[win].winbar = " %{%v:lua.require'nvim-navic'.get_location()%}"
                 end)
             end
+
+            vim.keymap.set({"i", "n"}, "<F2>", vim.lsp.buf.rename, { buffer = bufnr })
         end
 
         local servers =
