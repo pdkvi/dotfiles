@@ -102,7 +102,7 @@ return
             if luasnip.expandable() then
                 luasnip.expand()
             else
-                fcall(fallback, cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }))
+                fcall(fallback, cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }))
             end
         end
 
@@ -118,7 +118,7 @@ return
             if luasnip.expandable() then
                 luasnip.expand()
             else
-                fcall(fallback, cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }))
+                fcall(fallback, cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert }))
             end
         end
 
