@@ -16,6 +16,13 @@ local function tab_rename()
     end)
 end
 
+---@param name string
+---@param len integer?
+local function trim_name(name, len)
+    len = len or 28
+    return (#name <= len) and name or name:sub(1,len) .. "..."
+end
+
 return
 {
     "nanozuki/tabby.nvim",
@@ -133,7 +140,7 @@ return
                             line.sep('', hl, theme.fill),
                             tab.is_current() and '' or '',
                             tab.number(),
-                            tab.name(),
+                            trim_name(tab.name()),
                             " ",
                             line.sep('', hl, theme.fill),
                             hl = hl,
