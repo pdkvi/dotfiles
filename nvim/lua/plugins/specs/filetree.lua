@@ -77,6 +77,7 @@ return
 
         local api = require("nvim-tree.api")
         vim.keymap.set("n", "<leader>e", api.tree.toggle, { desc = "Toggle filesystem tree" })
+        vim.keymap.set("n", "<F2>", api.fs.rename)
 
         vim.api.nvim_create_autocmd("DirChanged",
         {
