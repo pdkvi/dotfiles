@@ -88,7 +88,7 @@ return
                 end
 
                 vim.system({
-                    "xdg-terminal-exec", "bash", "-c",
+                    "alacritty", "-e", "bash", "-c",
                     cmake.get_build_target_path() .. " ; " ..
                     "printf '\\nPress any key to continue...'" .. " && " ..
                     "read -sr -n 1"
