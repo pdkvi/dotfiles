@@ -88,7 +88,8 @@ return
                 end
 
                 vim.system({
-                    "alacritty", "-e", "bash", "-c",
+                    "alacritty", "-o", "cursor.style.blinking=\"always\"",
+                    "-e", "bash", "-c",
                     cmake.get_build_target_path() .. " ; " ..
                     "printf '\\nPress any key to continue...'" .. " && " ..
                     "read -sr -n 1"
