@@ -21,8 +21,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- install = { colorscheme = { "lackluster-dark" } },
     change_detection = { notify = false },
-    spec =
-    {
-        { import = "plugins.specs" }
-    }
+    spec = { { import = "plugins.specs" } },
+    dev = { path = vim.env.HOME .. "/Projects/nvim" }
 })
