@@ -49,9 +49,9 @@ return
         {
             callback = function()
                 local cwd = vim.uv.cwd()
-                local file = io.open(vim.fs.normalize(cwd .. "/CMakeLists.txt"), "r")
-                if file == nil then return end
-                file:close()
+                if vim.fn.filereadable(cwd .. "/CMakeLists.txt") ~= 1 then
+                    return
+                end
 
                 local config = cmake.get_config()
 
@@ -67,12 +67,28 @@ return
 
         vim.keymap.set("n", "<F3>", function() cmake.generate({}) end)
 
-        vim.keymap.set("n", "<F7>", function()
-            cmake.build({ target = "all" })
-        end)
+        local function build_target(target)
+            local co = coroutine.create(function()
+                local co = coroutine.running()
 
+                if cmake.get_config():has_build_directory() == false then
+                    cmake.generate({}, function(result)
+                        if result:is_ok() == false then return end
+                        coroutine.resume(co)
+                    end)
+                    coroutine.yield()
+                end
+                vim.defer_fn(function() cmake.build({ target = target }) end, 1)
+            end)
+            coroutine.resume(co)
+        end
+
+        vim.keymap.set("n", "<F7>", function() build_target("all") end)
         vim.keymap.set("n", "<F19>", function()
-            cmake.build({ target = nil })
+            cmake.select_build_target(false, function(result)
+                if result:is_ok() == false then return end
+                build_target(cmake.get_build_target())
+            end)
         end)
 
         vim.keymap.set("n", "<F29>", function()
@@ -80,12 +96,15 @@ return
                 local co = coroutine.running()
 
                 if cmake.get_build_target() == nil then
-                    cmake.build({ target = nil }, function()
-                        coroutine.resume(co)
-                    end)
-
+                    cmake.select_build_target(true, function() coroutine.resume(co) end)
                     coroutine.yield()
                 end
+
+                cmake.build({ target = cmake.get_build_target() }, function(result)
+                    if result:is_ok() == false then return end
+                    coroutine.resume(co)
+                end)
+                coroutine.yield()
 
                 vim.system({
                     "alacritty", "-o", "cursor.style.blinking=\"always\"",
