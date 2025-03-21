@@ -220,10 +220,19 @@ return
         vim.opt.pumheight = 15
         require("luasnip.loaders.from_snipmate").load()
 
+        local cmp_enabled = true
+
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "LuasnipInsertNodeEnter",
+            callback = function() cmp_enabled = false end
+        })
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "LuasnipInsertNodeLeave",
+            callback = function() cmp_enabled = true end
+        })
+
         cmp.setup({
-            enabled = function()
-                return not luasnip.in_snippet()
-            end,
+            enabled = function() return cmp_enabled end,
 
             completion = { completeopt = "menu,menuone,noinsert" },
 
