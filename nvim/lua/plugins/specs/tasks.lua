@@ -106,10 +106,11 @@ return
                 end)
                 coroutine.yield()
 
+
                 vim.system({
                     "alacritty", "-o", "cursor.style.blinking=\"always\"",
                     "-e", "bash", "-c",
-                    cmake.get_build_target_path() .. " ; " ..
+                    cmake.get_launch_target_path() .. " ; " ..
                     "printf '\\nPress any key to continue...'" .. " && " ..
                     "read -sr -n 1"
                 })
