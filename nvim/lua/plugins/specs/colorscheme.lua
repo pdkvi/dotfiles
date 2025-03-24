@@ -62,6 +62,10 @@ local function common_integrations()
     vim.api.nvim_set_hl(0, "TroubleNormal", { link = "TroubleNormal" })
     vim.api.nvim_set_hl(0, "TroubleNormalNC", { link = "TroubleNormalNC" })
 
+    vim.api.nvim_set_hl(0, "EdgyTitle", { link = "TabLine" })
+    vim.api.nvim_set_hl(0, "EdgyIcon", { link = "TabLine" })
+    vim.api.nvim_set_hl(0, "EdgyIconActive", { link = "TabLine" })
+
     local higroup_names = { "CmpItemKind" }
     for kind in pairs(kind_icons) do
         if type(kind) == "string" then
