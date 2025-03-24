@@ -16,7 +16,8 @@ return
                 WARN = " "
             },
 
-            timeout = 500
+            stages = "slide",
+            timeout = 700
         })
 
         vim.notify = notify
