@@ -13,9 +13,14 @@ return
             select =
             {
                 backend = { "builtin" },
+                get_config = function(opts)
+                    if opts.kind == "codeaction" then
+                        return { builtin = { relative = "cursor" } }
+                    end
+                end,
                 builtin =
                 {
-                    relative = "cursor",
+                    relative = "editor",
                     min_width = { 0, 0.1 },
                     min_height = { 0, 0.0 },
                     override = function(conf)
