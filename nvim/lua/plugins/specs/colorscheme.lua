@@ -104,6 +104,10 @@ return
                 vim.api.nvim_set_hl(0, name, vim.tbl_extend("force", hl, val))
             end
 
+            vim.api.nvim_set_hl(0, "EdgyNormal", { fg = "#000000", bg = "#dadada" })
+            vim.api.nvim_set_hl(0, "NvimTreeNormal", { fg = "#000000", bg = "#dadada" })
+            vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#dadada", bg = "#dadada" })
+
             -- TODO: maybe extract this to common highlight
             vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
             vim.api.nvim_set_hl(0, "DapStoppedText", { fg = "#b37f02", bold = true })
