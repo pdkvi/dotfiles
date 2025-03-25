@@ -35,6 +35,10 @@ local function common_integrations()
         return vim.api.nvim_get_hl(0, { name = name, link = false })
     end
 
+    vim.api.nvim_set_hl(0, "NvimTreeStatusLine", { link = "NvimTreeNormal" })
+    vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { link = "NvimTreeNormal" })
+    vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { link = "NvimTreeNormal" })
+
     vim.api.nvim_set_hl(0, "DapUIScope", { link = "WinBar" })
     vim.api.nvim_set_hl(0, "DapUIThread", { link = "WinBar" })
     vim.api.nvim_set_hl(0, "DapUIStoppedThread", { link = "WinBar" })
