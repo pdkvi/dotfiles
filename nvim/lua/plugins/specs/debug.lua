@@ -32,7 +32,7 @@ return
         dap.adapters.lldb =
         {
             type = "executable",
-            command = "lldb-dap"
+            command = "codelldb"
         }
 
         dap.configurations.cpp =
