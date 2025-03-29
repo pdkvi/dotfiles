@@ -28,13 +28,15 @@ return
 
         vim.keymap.set("n", "<A-CR>", vim.lsp.buf.code_action)
 
+        local float_opts = { border = "rounded", max_width = 100 }
+
         -- <C-i> = \u{f7fe}
-        vim.keymap.set("n", "<S-i>", vim.lsp.buf.hover)
+        vim.keymap.set("n", "<S-i>", function() vim.lsp.buf.hover(float_opts) end)
 
         vim.keymap.set("n", "K", function()
             local float_bufnr, win_id = vim.diagnostic.open_float()
             if float_bufnr == nil and win_id == nil then
-                vim.lsp.buf.hover()
+                vim.lsp.buf.hover(float_opts)
             end
         end)
 
@@ -49,19 +51,13 @@ return
         vim.diagnostic.config({
             virtual_text = { spacing = 0 },
             signs = { text = signs },
-            float = { border = "rounded", width = 100 }
+            float = float_opts
         })
 
         for type, icon in pairs(signs) do
             local hl = "LspDiagnosticsSign" .. type
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
-
-        local common_handlers =
-        {
-            ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", width = 100 }),
-            ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded", width = 100 }),
-        }
 
         local common_capabilities = vim.lsp.protocol.make_client_capabilities()
         common_capabilities.textDocument.foldingRange =
@@ -139,7 +135,6 @@ return
 
         for server, config in pairs(servers) do
             config.capabilities = vim.tbl_extend("keep", config.capabilities or {}, common_capabilities)
-            config.handlers = vim.tbl_extend("keep", config.handlers or {}, common_handlers)
 
             local config_on_attach = config.on_attach or function()end
             config.on_attach = function(client, bufnr)
