@@ -10,4 +10,6 @@ ln -sr ./git/gitconfig $HOME/.gitconfig
 
 ln -sr ./zsh/zshrc.local $HOME/.zshrc.local
 
+ln -sr ./zsh/zprofile $HOME/.zprofile
+
 ln -sr ./nvim $HOME/.config/
