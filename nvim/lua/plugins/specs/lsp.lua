@@ -122,6 +122,7 @@ return
                 {
                     "clangd",
                     "--header-insertion=never",
+                    "--function-arg-placeholders=0",
                     "--clang-tidy",
                     "-j=4",
                     "--malloc-trim",
