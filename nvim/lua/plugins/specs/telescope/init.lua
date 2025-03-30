@@ -16,7 +16,7 @@ return
         telescope.setup({
             defaults =
             {
-                file_ignore_patterns = { "out" },
+                file_ignore_patterns = { "^out/.*" },
 
                 mappings =
                 {
