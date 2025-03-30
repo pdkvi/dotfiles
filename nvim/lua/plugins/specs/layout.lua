@@ -11,6 +11,8 @@ return
                 { ft = "NvimTree", wo = { winbar = false } }
             },
 
+	    wo = { winhighlight = "" },
+
             options = { left = { size = 45 } },
             animate = { enabled = false }
         })

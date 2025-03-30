@@ -104,7 +104,6 @@ return
                 vim.api.nvim_set_hl(0, name, vim.tbl_extend("force", hl, val))
             end
 
-            vim.api.nvim_set_hl(0, "EdgyNormal", { fg = "#000000", bg = "#dadada" })
             vim.api.nvim_set_hl(0, "NvimTreeNormal", { fg = "#000000", bg = "#dadada" })
             vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#dadada", bg = "#dadada" })
 
@@ -139,7 +138,6 @@ return
 
             common_integrations()
 
-            vim.api.nvim_set_hl(0, "EdgyNormal", { fg = "#9f9f9f", bg = "#151515" })
             vim.api.nvim_set_hl(0, "NvimTreeNormal", { fg = "#9f9f9f", bg = "#151515" })
             vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#151515", bg = "#151515" })
 
