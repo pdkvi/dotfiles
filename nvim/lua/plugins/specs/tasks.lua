@@ -107,6 +107,10 @@ return
                 end)
                 coroutine.yield()
 
+                if cmake.get_launch_target() == nil then
+                    cmake.select_launch_target(true, function() coroutine.resume(co) end)
+                    coroutine.yield()
+                end
 
                 vim.system({
                     "alacritty", "-o", "cursor.style.blinking=\"always\"",
