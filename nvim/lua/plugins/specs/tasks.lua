@@ -1,12 +1,45 @@
 return
 {
     "Civitasv/cmake-tools.nvim",
-    dependencies = { {"akinsho/toggleterm.nvim", opts = { direction = "horizontal" }} },
+    dependencies =
+    {
+        {
+            "stevearc/overseer.nvim", opts =
+            {
+                component_aliases =
+                {
+                    default =
+                    {
+                        { "display_duration", detail_level = 2 },
+                        "on_output_summarize",
+                        "on_exit_set_status",
+                        { "on_complete_dispose", require_view = { "SUCCESS", "FAILURE" } },
+                    },
+
+                    -- Tasks from tasks.json use these components
+                    default_vscode =
+                    {
+                        "default",
+                        "on_result_diagnostics",
+                    },
+                },
+
+            }
+        },
+
+        {
+            "akinsho/toggleterm.nvim", opts =
+            {
+                direction = "horizontal"
+            }
+        }
+    },
 
     config = function()
         local const = vim.tbl_extend("force", require("cmake-tools.const"),
         {
             cmake_regenerate_on_save = false,
+
             cmake_generate_options =
             {
                 "-GNinja",
@@ -19,18 +52,31 @@ return
 
                 "-DCMAKE_EXPORT_COMPILE_COMMANDS=1"
             },
+
             cmake_dap_configuration = { type = "lldb" },
-            cmake_executor = {
-                name = "toggleterm",
+
+            cmake_executor =
+            {
+                name = "overseer",
                 default_opts =
                 {
-                    toggleterm =
+                    overseer =
                     {
-                        direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
-                        close_on_exit = false, -- whether close the terminal when exit
-                        auto_scroll = true, -- whether auto scroll to the bottom
-                        singleton = true, -- single instance, autocloses the opened one, if present
-                    },
+                        new_task_opts =
+                        {
+                            strategy =
+                            {
+                                "toggleterm",
+                                direction = "horizontal",
+                                auto_scroll = true,
+                                quit_on_exit = "success"
+                            }
+                        },
+
+                        on_new_task = function()
+                            require("overseer").open({ enter = false, direction = "bottom" })
+                        end
+                    }
                 }
             },
 
